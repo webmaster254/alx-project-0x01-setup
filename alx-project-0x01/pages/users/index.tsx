@@ -30,11 +30,15 @@ export async function getStaticProps() {
     const response = await fetch("https://jsonplaceholder.typicode.com/users")
     const users = await response.json()
 
+    const postsResponse = await fetch("https://jsonplaceholder.typicode.com/posts")
+    const posts = await postsResponse.json()
+
     return {
         props: {
-            users
+            users,
+            posts
         }
     }
 }
 
-export default Users
+export default Users;
